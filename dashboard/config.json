@@ -1,0 +1,32 @@
+{
+  "adc" : {
+    "sampling_rate" : 2000,
+    "resolution"    : 16,
+    "channels"      : 5,
+    "range"         : 5,
+    "vref"          : 2.5
+  },
+
+  "dataset" : {
+    "sampling_time"     : 2,
+    "update_delay"      : 200,
+    "batch_delay"       : 40,
+    "batch_samples"     : 80,
+    "dest_path"         : "./dataset"
+  },
+
+  "network" : {
+    "udp_dispatcher" : {
+        "ip"          : "192.168.4.2",
+        "port"        : 64769
+    },
+    "tcp_dispatcher" : {
+        "server_ip"          : "192.168.4.2",
+        "server_port"        : 51000,
+        "abonents"    : [
+          { "name" : "Game", "ip" : "192.168.4.2", "port" : 50000 },
+          { "name" : "Net", "ip" : "192.168.4.4", "port" : 50000 }
+        ]
+    }
+  }
+}

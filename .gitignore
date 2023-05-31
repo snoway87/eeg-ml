@@ -1,0 +1,9 @@
+**/dashboard_window.py
+**/approve_window.py
+**/dataset
+**/__pycache__
+**/resources
+**/.vscode
+**/*.code-workspace
+*.py[cod]
+.history/

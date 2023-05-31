@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DashboardWindow</class>
+ <widget class="QMainWindow" name="DashboardWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1319</width>
+    <height>855</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1319</width>
+    <height>855</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1319</width>
+    <height>855</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>EEG Dashboard</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>1291</width>
+      <height>831</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="hbox">
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>10</number>
+     </property>
+     <property name="rightMargin">
+      <number>10</number>
+     </property>
+     <property name="bottomMargin">
+      <number>10</number>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="lbox">
+       <item>
+        <widget class="ADCChannel" name="widget_fp1_f7"/>
+       </item>
+       <item>
+        <widget class="ADCChannel" name="widget_fp2_f8"/>
+       </item>
+       <item>
+        <widget class="ADCChannel" name="widget_f3_c3"/>
+       </item>
+       <item>
+        <widget class="ADCChannel" name="widget_f4_c4"/>
+       </item>
+       <item>
+        <widget class="ADCChannel" name="widget_fcz_cpz"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="cbox">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="Spectrum" name="widget_spectrum"/>
+       </item>
+       <item>
+        <widget class="QListWidget" name="training_figure"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="rbox">
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QGroupBox" name="dashboard_gbx">
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Dashboard controls</string>
+         </property>
+         <widget class="QLabel" name="adc_channel_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>121</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>ADC channel:</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="adc_channel">
+          <property name="geometry">
+           <rect>
+            <x>183</x>
+            <y>60</y>
+            <width>131</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>F4-C4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Fp2-F8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>FCz-CPz</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Fp1-F7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>F3-C3</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QGroupBox" name="trainabl_cnn_gbx">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>250</y>
+            <width>301</width>
+            <height>141</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="title">
+           <string>Trainable CNN</string>
+          </property>
+          <widget class="QCheckBox" name="train_cnn_1">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>40</y>
+             <width>131</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>CNN_1</string>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="train_cnn_2">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>70</y>
+             <width>131</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>CNN_2</string>
+           </property>
+          </widget>
+          <widget class="QCheckBox" name="train_cnn_3">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>100</y>
+             <width>131</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>CNN_3</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="lost_packets">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>30</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="lost_packets_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>161</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Lost packets:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="record_wav_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>150</y>
+            <width>141</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Record .WAVs</string>
+          </property>
+         </widget>
+         <widget class="QCheckBox" name="record_wav">
+          <property name="geometry">
+           <rect>
+            <x>190</x>
+            <y>150</y>
+            <width>121</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="iir_cutoff">
+          <property name="geometry">
+           <rect>
+            <x>183</x>
+            <y>90</y>
+            <width>131</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>60</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>100</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>160</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>200</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="iir_cutoff_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>121</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>IIR filter (Fc, Hz):</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="present_signal_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>120</y>
+            <width>121</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Present signal</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="present_signal">
+          <property name="geometry">
+           <rect>
+            <x>183</x>
+            <y>120</y>
+            <width>131</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <item>
+           <property name="text">
+            <string>ADC - Raw</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>ADC - Filtered </string>
+           </property>
+          </item>
+         </widget>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="game_gbx">
+         <property name="minimumSize">
+          <size>
+           <width>320</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>320</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="title">
+          <string>Game controls</string>
+         </property>
+         <widget class="QComboBox" name="game_lock_delay">
+          <property name="geometry">
+           <rect>
+            <x>210</x>
+            <y>90</y>
+            <width>104</width>
+            <height>26</height>
+           </rect>
+          </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
+          <property name="maxVisibleItems">
+           <number>4</number>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>5</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="game_lock_delay_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>90</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Lock delay:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="game_start_btn">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>280</y>
+            <width>321</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Start</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="game_score_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>60</y>
+            <width>111</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Current Score:</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="game_disable_btn">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>340</y>
+            <width>321</width>
+            <height>61</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Disable game controls</string>
+          </property>
+          <property name="checkable">
+           <bool>false</bool>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+         </widget>
+         <widget class="QLabel" name="game_ip_client_lbl">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>30</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Client IP:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="game_ip_client">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>30</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>-</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="game_score">
+          <property name="geometry">
+           <rect>
+            <x>220</x>
+            <y>60</y>
+            <width>91</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>Spectrum</class>
+   <extends>QListWidget</extends>
+   <header>widgets.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ADCChannel</class>
+   <extends>QListWidget</extends>
+   <header>widgets.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

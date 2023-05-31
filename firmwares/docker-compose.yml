@@ -1,0 +1,21 @@
+version : "3.9"
+
+services:
+  avr_tools:
+    privileged: true
+    image: "avr_tools"
+    build:
+      context: .images/avr_tools
+
+    hostname: "avr_tools"
+    container_name: "avr_tools"
+    environment:
+      SLEEP_DELAY: 1
+    devices:
+      - "/dev/gpiomem:/dev/gpiomem"
+      - "/dev/gpiochip0:/dev/gpiochip0"
+      - "/dev/gpiochip1:/dev/gpiochip1"
+      - "/dev/gpiochip2:/dev/gpiochip2"
+    volumes:
+      - "/sys:/sys"
+      - "${EXTERNAL_VOLUMES}./sources:/sources:rw"
